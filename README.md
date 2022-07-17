@@ -29,3 +29,7 @@
 
 ![consumerContainer](/images/afterMigration.jpg)
 
+# Affecter des comportements à l'agent
+
+![consumerContainer](/images/comportement.jpg)
+
