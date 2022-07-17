@@ -8,6 +8,7 @@ import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.ParallelBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.core.behaviours.WakerBehaviour;
 import jade.wrapper.ControllerException;
@@ -21,6 +22,18 @@ public class ConsumerAgent extends Agent {
 		}
 		System.out.println("Initialisation de l'agent: " + this.getAID().getName());
 		System.out.println("I am trying to buy a book: " + bookName);
+		
+		ParallelBehaviour parallelBehaviour = new ParallelBehaviour();
+		addBehaviour(parallelBehaviour);
+		
+		parallelBehaviour.addSubBehaviour(new OneShotBehaviour() {		
+			@Override
+			public void action() {
+
+				System.out.println("One Shot");
+			}
+		});
+		
 		/*
 		addBehaviour(new Behaviour() {
 			private int counter = 0;
@@ -39,14 +52,14 @@ public class ConsumerAgent extends Agent {
 			}
 		});*/
 		
-		addBehaviour(new OneShotBehaviour() {
+		/*addBehaviour(new OneShotBehaviour() {
 			
 			@Override
 			public void action() {
 				System.out.println("One Shot Behavior");
 				
 			}
-		});
+		});*/
 		
 	/*	addBehaviour(new CyclicBehaviour() {
 			private int counter = 0;
@@ -72,12 +85,12 @@ public class ConsumerAgent extends Agent {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy:HH:mm");
 		Date date=null;
 		try {
-			date = dateFormat.parse("17/07/2022:15:31");
+			date = dateFormat.parse("17/07/2022:15:39");
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		addBehaviour(new WakerBehaviour(this,date) {
+		parallelBehaviour.addSubBehaviour(new WakerBehaviour(this,date) {
 			
 			@Override
 			protected void onWake() {
