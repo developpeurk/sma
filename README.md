@@ -2,4 +2,4 @@
 
 #### Intérface  
 
-![jade](/images/1.png)
+![jade](/images/1.png.jpg)
