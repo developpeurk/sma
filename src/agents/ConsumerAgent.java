@@ -93,7 +93,16 @@ public class ConsumerAgent extends Agent {
 					System.out.println("Sender: " + aclMessage.getSender().getName());
 					System.out.println("Content: " + aclMessage.getContent());
 					System.out.println("SpeechAct: " + aclMessage.getPerformative(aclMessage.getPerformative()));
-				}else block();
+					
+					ACLMessage reply = new ACLMessage(ACLMessage.CONFIRM);
+					reply.addReceiver(aclMessage.getSender());
+					reply.setContent("Price=900");
+					send(reply);
+					
+				}else {
+					System.out.println("Bloc ......");
+					block();
+					}
 				
 			}
 		});
