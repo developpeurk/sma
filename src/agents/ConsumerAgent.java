@@ -6,7 +6,12 @@ import jade.wrapper.ControllerException;
 public class ConsumerAgent extends Agent {
 	@Override
 	protected void setup() {
+		String bookName=null;
+		if(this.getArguments().length==1) {
+			bookName = (String)this.getArguments()[0];
+		}
 		System.out.println("Initialisation de l'agent: " + this.getAID().getName());
+		System.out.println("I am trying to buy a book: " + bookName);
 	}
 
 	@Override
