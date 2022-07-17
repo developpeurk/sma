@@ -27,3 +27,5 @@
 
 ![consumerContainer](/images/deployerAgent.jpg)
 
+![consumerContainer](/images/afterMigration.jpg)
+
