@@ -42,6 +42,7 @@
 ![acl](/images/result.jpg)
 ![acl](/images/speechAct.jpg)
 ![sniffer](/images/sniffer.jpg)
+![messageTemplate](/images/message%20template.jpg)
 
 ## Diagramme d'interactions
 

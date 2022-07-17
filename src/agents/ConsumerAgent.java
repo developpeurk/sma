@@ -5,13 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import jade.core.Agent;
-import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.core.behaviours.ParallelBehaviour;
-import jade.core.behaviours.TickerBehaviour;
 import jade.core.behaviours.WakerBehaviour;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
 import jade.wrapper.ControllerException;
 
 public class ConsumerAgent extends Agent {
@@ -88,7 +87,8 @@ public class ConsumerAgent extends Agent {
 		parallelBehaviour.addSubBehaviour(new CyclicBehaviour() {
 			@Override
 			public void action() {
-				ACLMessage aclMessage = receive();
+				MessageTemplate messageTemplate = MessageTemplate.MatchPerformative(ACLMessage.CFP);
+				ACLMessage aclMessage = receive(messageTemplate);
 				if(aclMessage!=null){
 					System.out.println("Sender: " + aclMessage.getSender().getName());
 					System.out.println("Content: " + aclMessage.getContent());
