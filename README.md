@@ -6,7 +6,7 @@
 - [x] Créer un Agent Consumer
 - [x] Déployer l'agent
 - [x] Affecter des comportements à l'agent
-- [x] Tester l'envoi et le réception des messages ACL
+- [x] Tester l'envoi et la réception des messages ACL
 
 
 
@@ -36,6 +36,10 @@
 
 ![behavior](/images/behavior.gif)
 
+## Tester l'envoi et la réception des messages ACL
+
+![acl](/images/sendMessage.jpg)
+![acl](/images/result.jpg)
 
 ## Diagramme d'interactions
 

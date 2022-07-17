@@ -11,6 +11,7 @@ import jade.core.behaviours.OneShotBehaviour;
 import jade.core.behaviours.ParallelBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.core.behaviours.WakerBehaviour;
+import jade.lang.acl.ACLMessage;
 import jade.wrapper.ControllerException;
 
 public class ConsumerAgent extends Agent {
@@ -82,6 +83,24 @@ public class ConsumerAgent extends Agent {
 				
 			}
 		});*/
+		
+		
+		parallelBehaviour.addSubBehaviour(new CyclicBehaviour() {
+			@Override
+			public void action() {
+				ACLMessage aclMessage = receive();
+				if(aclMessage!=null){
+					System.out.println("Sender: " + aclMessage.getSender().getName());
+					System.out.println("Content: " + aclMessage.getContent());
+					System.out.println("SpeechAct: " + aclMessage.getPerformative());
+				}else block();
+				
+			}
+		});
+		
+		
+		
+		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy:HH:mm");
 		Date date=null;
 		try {
