@@ -87,7 +87,9 @@ public class ConsumerAgent extends Agent {
 		parallelBehaviour.addSubBehaviour(new CyclicBehaviour() {
 			@Override
 			public void action() {
-				MessageTemplate messageTemplate = MessageTemplate.MatchPerformative(ACLMessage.CFP);
+				//MessageTemplate messageTemplate = MessageTemplate.MatchPerformative(ACLMessage.CFP);
+				MessageTemplate messageTemplate = MessageTemplate.and(MessageTemplate.MatchPerformative(ACLMessage.CFP), 
+						MessageTemplate.MatchLanguage("fr"));
 				ACLMessage aclMessage = receive(messageTemplate);
 				if(aclMessage!=null){
 					System.out.println("Sender: " + aclMessage.getSender().getName());
