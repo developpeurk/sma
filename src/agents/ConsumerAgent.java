@@ -1,7 +1,15 @@
 package agents;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.TickerBehaviour;
+import jade.core.behaviours.WakerBehaviour;
 import jade.wrapper.ControllerException;
 
 public class ConsumerAgent extends Agent {
@@ -30,6 +38,52 @@ public class ConsumerAgent extends Agent {
 				++counter;
 			}
 		});*/
+		
+		addBehaviour(new OneShotBehaviour() {
+			
+			@Override
+			public void action() {
+				System.out.println("One Shot Behavior");
+				
+			}
+		});
+		
+	/*	addBehaviour(new CyclicBehaviour() {
+			private int counter = 0;
+			
+			@Override
+			public void action() {
+				System.out.println("Counter => " + counter);
+				++counter;
+				
+			}
+		});*/
+		/*
+		addBehaviour(new TickerBehaviour(this, 1000) {
+	
+			
+			@Override
+			protected void onTick() {
+				System.out.println("Tic " );
+				System.out.println(myAgent.getAID().getLocalName());
+				
+			}
+		});*/
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy:HH:mm");
+		Date date=null;
+		try {
+			date = dateFormat.parse("17/07/2022:15:31");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		addBehaviour(new WakerBehaviour(this,date) {
+			
+			@Override
+			protected void onWake() {
+				System.out.println("Waker Behavior");
+			}
+		});
 	}
 
 	@Override

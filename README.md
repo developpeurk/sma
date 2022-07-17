@@ -34,6 +34,8 @@
 
 ## Affecter des comportements à l'agent
 
+![behavior](/images/behavior.gif)
+
 
 ## Diagramme d'interactions
 
