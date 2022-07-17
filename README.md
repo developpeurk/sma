@@ -19,6 +19,11 @@
 
 ![AgentContainer](/images/2.jpg)
 
-# Consumer Container
+# Agent consumer
 
 ![consumerContainer](/images/consumer.jpg)
+
+# Déployer l'agent
+
+![consumerContainer](/images/deployerAgent.jpg)
+
