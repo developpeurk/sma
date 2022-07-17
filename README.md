@@ -29,12 +29,12 @@
 
 ![consumerContainer](/images/afterMigration.jpg)
 
-## Affecter des comportements à l'agent
-
 ![consumerContainer](/images/comportement.jpg)
 
 
-# TP  
+## Affecter des comportements à l'agent
+
+
 ## Diagramme d'interactions
 
 ![dinteraction](/images/diagramme.jpg)
