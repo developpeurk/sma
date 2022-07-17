@@ -92,7 +92,7 @@ public class ConsumerAgent extends Agent {
 				if(aclMessage!=null){
 					System.out.println("Sender: " + aclMessage.getSender().getName());
 					System.out.println("Content: " + aclMessage.getContent());
-					System.out.println("SpeechAct: " + aclMessage.getPerformative());
+					System.out.println("SpeechAct: " + aclMessage.getPerformative(aclMessage.getPerformative()));
 				}else block();
 				
 			}

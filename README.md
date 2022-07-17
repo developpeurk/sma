@@ -40,6 +40,7 @@
 
 ![acl](/images/sendMessage.jpg)
 ![acl](/images/result.jpg)
+![acl](/images/speechAct.jpg)
 
 ## Diagramme d'interactions
 
